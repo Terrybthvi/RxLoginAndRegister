@@ -5,7 +5,18 @@ $db = new DBApis();
 
 // json response array
 $response = array();
+ function __construct()
+    {
+        // require_once 'db_connect.php';
+        // connecting to database
+        $this->conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
+        if (mysqli_connect_errno($this->conn)) {
+            $response["success"] = FALSE;
+            $response["msg"] =  "Failed to connect to MySQL: " . mysqli_connect_error();
+             echo json_encode($response,JSON_FORCE_OBJECT);
+        }
+    }
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])||isset($_POST['contact'])) {
 
     // receiving the post params
@@ -44,5 +55,4 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])
 //            echo strip_tags($str);
     echo json_encode($response,JSON_FORCE_OBJECT);
 }
-
 
