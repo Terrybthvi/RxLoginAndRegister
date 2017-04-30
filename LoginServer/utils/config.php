@@ -7,7 +7,7 @@
 
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
-define("DB_PASSWORD", "");
-define("DB_NAME", "simplelogin");
+define("DB_PASSWORD", "L13071214.");
+define("DB_NAME", "HduStudyHelper");
 
 
