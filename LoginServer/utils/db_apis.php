@@ -34,7 +34,7 @@ class DBApis
         $encrypted_password = $hash["encrypted"]; // encrypted password
         $salt = $hash["salt"]; // salt
         $date = date("Y/m/d");
-        $sql = "INSERT INTO users(name, email, encrypted_password, salt,contact, created_at) VALUES( '$name','$email',' $encrypted_password', ' $salt','$contact', '$date')";
+        $sql = "INSERT INTO users(id ,user_name, email, encrypted_password, salt,contact, created_at) VALUES( '111','$name','$email',' $encrypted_password', ' $salt','$contact', '$date')";
         $result = mysqli_query($this->conn, $sql);
 
         if ($result) {
